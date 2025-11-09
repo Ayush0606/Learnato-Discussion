@@ -1,0 +1,54 @@
+/* minimal resets and base styles */
+:root{
+	--bg: #ffffff;
+	--card-bg: #ffffff;
+	--text: #111827; /* gray-900 */
+	--muted: #6b7280;
+	--primary: #2563eb; /* blue-600 */
+	--accent: #16a34a; /* green-600 */
+}
+
+html.dark{
+	/* slightly lighter dark theme so elements and text remain readable */
+	--bg: #111827;    /* gray-900 (a bit lighter than the previous very-dark value) */
+	--card-bg: #1f2937; /* gray-800 - cards sit slightly lighter than the background */
+	--text: #e6eef8;    /* off-white for gentler contrast */
+	--muted: #cbd5e1;   /* lighter muted tone */
+	--primary: #60a5fa; /* blue-400 - a bit brighter */
+	--accent: #34d399;  /* green-400 */
+}
+
+body { font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background-color: var(--bg); color: var(--text); transition: background-color 200ms ease, color 200ms ease; }
+html, body, #root { height: 100%; }
+
+.card { border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(2,6,23,0.08); padding: 1rem; background-color: var(--card-bg); color: var(--text); }
+.muted { color: var(--muted); }
+
+button.primary { background-color: var(--primary); color: white; }
+button.primary:hover { opacity: 0.95 }
+button.positive { background-color: var(--accent); color: white }
+
+/* Theme-aware helpers to replace Tailwind bg-* classes so components follow CSS variables */
+.bg-theme { background-color: var(--card-bg); color: var(--text); }
+.bg-theme-soft { background-color: rgba(255,255,255,0.03); }
+.btn-primary { background-color: var(--primary); color: white; }
+.btn-primary:hover { opacity: 0.95 }
+.btn-accent { background-color: var(--accent); color: white }
+.btn-danger { background-color: #ef4444; color: white }
+.text-muted { color: var(--muted); }
+
+/* subtle card variants used for lists and suggestions */
+.card-ghost { background-color: var(--card-bg); border-radius: 0.5rem; padding: .75rem }
+
+/* more semantic button helpers */
+.btn-warning { background-color: #f59e0b; color: white } /* amber-500 */
+.btn-success { background-color: #10b981; color: white } /* emerald-500 */
+.text-secondary { color: var(--muted); font-size: .875rem }
+.text-danger { color: #ef4444 }
+.text-link { color: var(--primary) }
+.optimistic { background-color: rgba(250, 204, 21, 0.08); }
+
+/* small helpers */
+.bg-card { background-color: var(--card-bg); }
+.text-primary { color: var(--primary) }
+.text-accent { color: var(--accent) }
