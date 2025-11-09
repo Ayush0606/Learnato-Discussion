@@ -5,7 +5,7 @@ import PostView from './components/PostView'
 import NewPostForm from './components/NewPostForm'
 import Login from './components/Login'
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api'
+const API_BASE = import.meta.env.VITE_API_BASE || '/api'
 
 export default function App(){
   const [posts, setPosts] = useState([])
